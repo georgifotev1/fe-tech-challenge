@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 class UsersView extends React.Component {
   constructor(props) {
     super(props);
@@ -9,9 +10,7 @@ class UsersView extends React.Component {
   }
   componentDidMount() {
     axios
-      .get(
-        "https://my-json-server.typicode.com/georgifotev1/fe-tech-challenge/users"
-      )
+      .get("http://localhost:3000/users")
       .then((response) => {
         this.setState({ users: response.data });
       })
@@ -25,9 +24,10 @@ class UsersView extends React.Component {
         <h2>All users:</h2>
         <ul>
           {users.length
-            ? users.map((user) => <li key={user.id}>{user.name}</li>)
+            ? users.map((user) => <li key={user.id}>{user.fullname}</li>)
             : null}
         </ul>
+        <Link to='/adduser'>Add user</Link>
       </div>
     );
   }

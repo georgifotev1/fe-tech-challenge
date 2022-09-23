@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 class PostsView extends React.Component {
   constructor(props) {
     super(props);
@@ -11,14 +11,13 @@ class PostsView extends React.Component {
 
   componentDidMount() {
     axios
-      .get(
-        "https://my-json-server.typicode.com/georgifotev1/fe-tech-challenge/posts"
-      )
+      .get("http://localhost:3000/posts")
       .then((response) => {
         this.setState({ posts: response.data });
       })
       .catch((error) => alert(error.message));
   }
+
   render() {
     const { posts } = this.state;
     return (
@@ -29,6 +28,7 @@ class PostsView extends React.Component {
             ? posts.map((post) => <li key={post.id}>{post.title}</li>)
             : null}
         </ul>
+        <Link to='/addpost'>Add post</Link>
       </div>
     );
   }

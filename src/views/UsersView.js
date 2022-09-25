@@ -10,7 +10,7 @@ class UsersView extends React.Component {
   }
   componentDidMount() {
     axios
-      .get("http://localhost:3000/users")
+      .get("http://localhost:3030/users")
       .then((response) => {
         this.setState({ users: response.data });
       })
@@ -24,7 +24,7 @@ class UsersView extends React.Component {
         <h2>All users:</h2>
         <ul>
           {users.length
-            ? users.map((user) => <li key={user.id}>{user.fullname}</li>)
+            ? users.map((user) => <li key={user.id}>{user.username}</li>)
             : null}
         </ul>
         <Link to='/adduser'>Add user</Link>

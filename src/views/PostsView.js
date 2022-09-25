@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+
 class PostsView extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +12,7 @@ class PostsView extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:3000/posts")
+      .get("http://localhost:3030/posts")
       .then((response) => {
         this.setState({ posts: response.data });
       })
@@ -25,7 +26,13 @@ class PostsView extends React.Component {
         <h2>List of posts:</h2>
         <ul>
           {posts.length
-            ? posts.map((post) => <li key={post.id}>{post.title}</li>)
+            ? posts.map((post) => (
+                <li key={post.id}>
+                  {post.title}
+                  <br></br>
+                  {post.body}
+                </li>
+              ))
             : null}
         </ul>
         <Link to='/addpost'>Add post</Link>

@@ -28,9 +28,8 @@ class PostsView extends React.Component {
           {posts.length
             ? posts.map((post) => (
                 <li key={post.id}>
-                  {post.title}
-                  <br></br>
-                  {post.body}
+                  <div> Title: {post.title} </div>
+                  <div>Content: {post.body}</div>
                 </li>
               ))
             : null}

@@ -22,11 +22,17 @@ class UsersView extends React.Component {
     return (
       <div>
         <h2>All users:</h2>
-        <ul>
+        <ol>
           {users.length
-            ? users.map((user) => <li key={user.id}>{user.username}</li>)
+            ? users.map((user) => (
+                <li key={user.id}>
+                  <div>User name: {user.username}</div>
+                  <div>Full name: {user.fullname}</div>
+                  <div>Email: {user.email}</div>
+                </li>
+              ))
             : null}
-        </ul>
+        </ol>
         <Link to='/adduser'>Add user</Link>
       </div>
     );

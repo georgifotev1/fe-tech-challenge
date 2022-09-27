@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 function HomeView() {
@@ -14,7 +14,7 @@ function HomeView() {
       .get("http://localhost:3030" + path)
       .then((response) => {
         for (let token of response.data) {
-          if (choise == "posts") {
+          if (choise === "posts") {
             if (token.title.includes(searchFor)) {
               matches.push(token.title);
             }

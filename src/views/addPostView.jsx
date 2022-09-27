@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import {postData} from "../restService.jsx"
 
 function AddPostView() {
   const [title, setTitle] = useState("");
@@ -12,10 +12,7 @@ function AddPostView() {
     ev.preventDefault();
     const blog = { title, body };
 
-    axios
-      .post("http://localhost:3030/posts", blog)
-      .then((response) => console.log(response))
-      .catch((error) => console.log(error));
+    postData("/posts", blog)
     navigate("/posts");
   };
 

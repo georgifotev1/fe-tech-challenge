@@ -1,22 +1,18 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import {postData} from "../restService.jsx"
 
 function AddUserView() {
   const [fullname, setFullname] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-
+  
   const navigate = useNavigate();
 
   const submitHandler = (ev) => {
     ev.preventDefault();
     const blog = { fullname, username, email };
-
-    axios
-      .post("http://localhost:3030/users", blog)
-      .then((response) => console.log(response))
-      .catch((error) => console.log(error));
+    postData("/users", blog)
     navigate("/users");
   };
 

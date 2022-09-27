@@ -17,3 +17,4 @@ export function postData(path, data) {
     })
     .catch((error) => alert(error.message));
 }
+

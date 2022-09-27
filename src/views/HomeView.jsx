@@ -42,11 +42,11 @@ function HomeView() {
         </select>
         <button type='submit'>Search</button>
         <div className='searchContent'>
-          <ol>
+          <ul>
             {data.length
               ? data.map((input) => <li key={input}>{input}</li>)
               : null}
-          </ol>
+          </ul>
         </div>
       </div>
     </form>

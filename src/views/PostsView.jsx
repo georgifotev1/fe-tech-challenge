@@ -1,11 +1,16 @@
 import React, { useEffect, useState , useMemo} from "react";
 import {useTable} from "react-table"
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import {getData} from "../restService.jsx"
 import {postColumns} from '../columns.jsx'
+import AddPostView from "./addPostView"
+import Modal from "react-modal"
+
+
 
 function PostsView() {
   const [posts, setPosts] = useState([]);
+  const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
    getData('/posts' , setPosts)
@@ -79,7 +84,13 @@ function PostsView() {
          })}
        </tbody>
      </table>
-      <Link to='/addpost'>Add post</Link>
+     <button onClick={() => {
+        setOpenModal(state => !state)
+      }}>Add post</button>
+      <Modal
+      isOpen={openModal}>
+      {openModal && <AddPostView closeModal={setOpenModal} />}
+      </Modal>
     </div>
   );
 }

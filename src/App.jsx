@@ -30,8 +30,8 @@ function App() {
             <Route path='/' element={<HomeView />} />
             <Route path='/posts' element={<PostsView />} />
             <Route path='/users' element={<UsersView />} />
-            <Route path='/addpost' element={<AddPostView />} />
-            <Route path='/adduser' element={<AddUserView />} />
+
+
           </Routes>
         </div>
       </div>

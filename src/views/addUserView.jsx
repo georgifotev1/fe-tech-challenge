@@ -1,19 +1,20 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import {postData} from "../restService.jsx"
 
-function AddUserView() {
+function AddUserView({closeModal}) {
   const [fullname, setFullname] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   
-  const navigate = useNavigate();
-
   const submitHandler = (ev) => {
     ev.preventDefault();
     const blog = { fullname, username, email };
-    postData("/users", blog)
-    navigate("/users");
+    if (fullname != "" && username != "" && email != ""){
+      postData("/users", blog)
+    } else {
+      alert("All fields must be filled in!")
+    }
+    closeModal(false);  
   };
 
   return (

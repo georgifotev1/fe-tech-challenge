@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import {postData} from "../restService.jsx"
 
-function AddPostView() {
+function AddPostView({closeModal}) {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-
-  const navigate = useNavigate();
 
   const submitHandler = (ev) => {
     ev.preventDefault();
     const blog = { title, body };
-
-    postData("/posts", blog)
-    navigate("/posts");
+    if (title != "" && body != "" ){
+      postData("/posts", blog)
+    } else {
+      alert("All fields must be filled in!")
+    }
+    closeModal(false);
   };
 
   return (

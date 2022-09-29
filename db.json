@@ -29,6 +29,11 @@
       "title": "test",
       "body": "just testing",
       "id": 6
+    },
+    {
+      "title": "Helo",
+      "body": "World",
+      "id": 7
     }
   ],
   "users": [
@@ -73,6 +78,18 @@
       "username": "mimi1",
       "email": "mimi@abv.bg",
       "id": 7
+    },
+    {
+      "fullname": "Petko Pekov",
+      "username": "petko1",
+      "email": "petko1@abv.bg",
+      "id": 8
+    },
+    {
+      "fullname": "Test Test",
+      "username": "test",
+      "email": "test@abv.bg",
+      "id": 9
     }
   ]
 }

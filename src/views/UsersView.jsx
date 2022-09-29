@@ -1,11 +1,14 @@
 import React, { useEffect, useState, useMemo } from "react";
 import {useTable} from "react-table"
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import {getData} from "../restService.jsx"
 import {userColumns} from '../columns.jsx'
+import AddUserView from "./addUserView"
+import Modal from "react-modal"
 
 function UsersView() {
   const [users, setUsers] = useState([]);
+  const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
     getData("/users", setUsers)
@@ -69,7 +72,13 @@ function UsersView() {
          })}
        </tbody>
      </table>
-      <Link to='/adduser'>Add user</Link>
+      <button onClick={() => {
+        setOpenModal(state => !state)
+      }}>Add user</button>
+      <Modal
+      isOpen={openModal}>
+      {openModal && <AddUserView closeModal={setOpenModal} />}
+      </Modal>
     </div>
   );
 }

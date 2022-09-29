@@ -1,10 +1,8 @@
 import React from "react";
 import { Route, BrowserRouter, Routes, Link } from "react-router-dom";
-import AddPostView from "./views/addPostView";
 import HomeView from "./views/HomeView";
 import PostsView from "./views/PostsView";
 import UsersView from "./views/UsersView";
-import AddUserView from "./views/addUserView";
 import "./App.css";
 
 function App() {

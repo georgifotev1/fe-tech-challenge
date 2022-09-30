@@ -9,7 +9,7 @@ function AddUserView({closeModal}) {
   const submitHandler = (ev) => {
     ev.preventDefault();
     const blog = { fullname, username, email };
-    if (fullname != "" && username != "" && email != ""){
+    if (fullname !== "" && username !== "" && email !== ""){
       postData("/users", blog)
     } else {
       alert("All fields must be filled in!")

@@ -28,8 +28,6 @@ function App() {
             <Route path='/' element={<HomeView />} />
             <Route path='/posts' element={<PostsView />} />
             <Route path='/users' element={<UsersView />} />
-
-
           </Routes>
         </div>
       </div>

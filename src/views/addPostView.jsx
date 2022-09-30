@@ -8,7 +8,7 @@ function AddPostView({closeModal}) {
   const submitHandler = (ev) => {
     ev.preventDefault();
     const blog = { title, body };
-    if (title != "" && body != "" ){
+    if (title !== "" && body !== "" ){
       postData("/posts", blog)
     } else {
       alert("All fields must be filled in!")

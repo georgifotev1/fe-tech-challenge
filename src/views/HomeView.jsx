@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import {getData} from "../restService.jsx"
 
 function HomeView() {
   const [choise, setChoise] = useState("users");
@@ -10,24 +10,21 @@ function HomeView() {
   const submitHandler = (ev) => {
     ev.preventDefault();
     const searchFor = document.querySelector("input").value;
-    axios
-      .get("http://localhost:3030" + path)
-      .then((response) => {
-        for (let token of response.data) {
-          if (choise === "posts") {
-            if (token.title.includes(searchFor)) {
-              matches.push(token.title);
-            }
-          } else {
-            if (token.username.includes(searchFor)) {
-              matches.push(token.username);
-            }
+    getData(path, (response) => {
+      for (let token of response) {
+        if (choise === "posts") {
+          if (token.title.includes(searchFor)) {
+            matches.push(token.title);
+          }
+        } else {
+          if (token.username.includes(searchFor)) {
+            matches.push(token.username);
           }
         }
+      }
         setData(matches);
         document.querySelector("input").value = "";
-      })
-      .catch((err) => console.log(err));
+    })
   };
 
   return (

@@ -11,7 +11,7 @@ function PostsView() {
   
   useEffect(() => {
     getData('/posts' , setPosts)
-  }, []);
+  }, [openModal]);
   
   const props = {
     tableData: posts,

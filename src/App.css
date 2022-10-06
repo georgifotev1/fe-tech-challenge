@@ -3,14 +3,36 @@
     margin: 0;
     font-family: "Fira sans", sans-serif;
 }
-body {
+.App {
     background-color: antiquewhite;
+    height: 100vh;
 }
 h1 {
+    padding: 40px;
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    
+    background: antiquewhite;
+    color: black;
+    font-size: 30px;
+}
+
+h2 {
+  padding-bottom: 10px;
+}
+
+.addUser {
+  margin-top: 10px;
+  background-color:darkkhaki;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.searchBox p{
+  padding-bottom: 5px;
 }
 
 /* Add a black background color to the top navigation */
@@ -39,4 +61,8 @@ h1 {
   .active {
     background-color: #0b6d49;
     color: white;
+  }
+  
+  .content {
+    padding: 50px;
   }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {getData} from "../restService.jsx"
+import { getData } from "../restService.jsx";
 
 function HomeView() {
   const [choise, setChoise] = useState("users");
@@ -22,15 +22,15 @@ function HomeView() {
           }
         }
       }
-        setData(matches);
-        document.querySelector("input").value = "";
-    })
+      setData(matches);
+      document.querySelector("input").value = "";
+    });
   };
 
   return (
     <form onSubmit={submitHandler}>
-      <div>
-        <h2>Welcome to my simple app!</h2>
+      <h2>Welcome to my simple app!</h2>
+      <div className='searchBox'>
         <p>Search:</p>
         <input type='text' placeholder='username or title' />
         <select value={choise} onChange={(ev) => setChoise(ev.target.value)}>

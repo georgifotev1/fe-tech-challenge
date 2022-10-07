@@ -66,3 +66,20 @@ h2 {
   .content {
     padding: 50px;
   }
+
+  input[type=text] {
+    width: 20%;
+    padding: 15px 20px;
+    margin: 0px 8px;
+    box-sizing: border-box;
+  }
+
+  select {
+    width: 150px;
+    padding: 15px;
+    margin-right: 8px;
+    border: 0 !important;
+    background-color: darkkhaki;
+    color: white;
+  }
+  

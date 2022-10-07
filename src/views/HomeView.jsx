@@ -33,11 +33,17 @@ function HomeView() {
       <div className='searchBox'>
         <p>Search:</p>
         <input type='text' placeholder='username or title' />
-        <select value={choise} onChange={(ev) => setChoise(ev.target.value)}>
+        <select
+          className='custom-select'
+          value={choise}
+          onChange={(ev) => setChoise(ev.target.value)}
+        >
           <option value='posts'>Post title</option>
           <option value='users'>Username</option>
         </select>
-        <button type='submit'>Search</button>
+        <button type='submit' className='addUser'>
+          Search
+        </button>
         <div className='searchContent'>
           <ul>
             {data.length

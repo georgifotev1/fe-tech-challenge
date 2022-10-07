@@ -18,16 +18,16 @@ export const userColumns = [
 ];
 
 export const postColumns = [
-    {
-      Header: "Id",
-      accessor: "id",
-    },
-    {
-      Header: "Title",
-      accessor: "title",
-    },
-    {
-      Header: "Content",
-      accessor: "body",
-    },
+  {
+    Header: "Id",
+    accessor: "id",
+  },
+  {
+    Header: "Title",
+    accessor: "title",
+  },
+  {
+    Header: "Content",
+    accessor: "body",
+  },
 ];
